@@ -8,7 +8,7 @@ const experiences = [
   {
     id: 1,
     role: "Software Engineer — Full Stack Developer",
-    company: "Arnest",
+    company: "Unify Liv",
     location: "Bengaluru",
     period: "May 2023 – Present",
     responsibilities: [
