@@ -9,6 +9,8 @@ npm install
 npm run dev
 ```
 
+Visit `http://localhost:3000`
+
 ## Tech Stack
 
 Next.js 14 • TypeScript • Tailwind CSS • Framer Motion
