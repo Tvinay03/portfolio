@@ -2,19 +2,18 @@
 
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Download, ArrowRight } from "lucide-react";
-import Image from "next/image";
 
 // 🎯 CUSTOMIZE YOUR SOCIAL LINKS HERE
 const socialLinks = [
   {
     name: "LinkedIn",
     icon: Linkedin,
-    href: "https://linkedin.com/in/yourprofile", // ⚠️ UPDATE THIS
+    href: "https://www.linkedin.com/in/vinay-thota/",
   },
   {
     name: "GitHub",
     icon: Github,
-    href: "https://github.com/yourprofile", // ⚠️ UPDATE THIS
+    href: "https://github.com/Tvinay03",
   },
   {
     name: "Email",
@@ -65,8 +64,7 @@ const Hero = () => {
               transition={{ delay: 0.3 }}
               className="text-5xl md:text-6xl lg:text-7xl font-bold"
             >
-              Thota Govindu{" "}
-              <span className="text-gradient">Vinay</span>
+              Thota Govindu <span className="text-gradient">Vinay</span>
             </motion.h1>
 
             {/* Job Title */}
@@ -86,9 +84,9 @@ const Hero = () => {
               transition={{ delay: 0.5 }}
               className="text-gray-300 text-lg max-w-xl leading-relaxed"
             >
-              Passionate about AI-driven development, building scalable
-              applications with Machine Learning, LLMs, and Google Cloud
-              Platform.
+              Modern Full‑Stack Developer · React, React Native, Next.js, Node.js · Building
+              scalable, high‑performance web & mobile solutions with a passion
+              for AI and Google Cloud.
             </motion.p>
 
             {/* CTAs */}
@@ -106,8 +104,9 @@ const Hero = () => {
                 <ArrowRight size={20} />
               </button>
               <a
-                href="/resume.pdf" // ⚠️ ADD YOUR RESUME PDF TO PUBLIC FOLDER
-                download
+                href="https://drive.google.com/uc?export=download&id=1zNRomew1zUgV7arHAf0926gn7mIftYUZ"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-3 glass hover:bg-white/10 text-white font-medium rounded-lg transition-all duration-300 flex items-center gap-2 hover:scale-105"
               >
                 <Download size={20} />
@@ -147,31 +146,20 @@ const Hero = () => {
             <div className="relative">
               {/* Glow effect */}
               <div className="absolute inset-0 bg-primary/30 rounded-full blur-3xl animate-glow" />
-              
+
               {/* Image container */}
               <div className="relative w-80 h-80 md:w-96 md:h-96">
                 <div className="absolute inset-0 rounded-full border-4 border-primary/50 animate-pulse" />
                 <div className="absolute inset-2 rounded-full border-2 border-primary/30" />
-                
+
                 {/* 🖼️ REPLACE WITH YOUR IMAGE PATH */}
-                {/* Temporary placeholder - Add your image as /public/profile.jpg */}
-                <div className="rounded-full w-full h-full relative z-10 bg-gradient-to-br from-primary/20 to-dark flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <p className="text-6xl mb-4">👨‍💻</p>
-                    <p className="text-sm text-gray-400">Add profile.jpg</p>
-                    <p className="text-xs text-gray-500">to public/ folder</p>
-                  </div>
-                </div>
-                {/* Uncomment when you add your image:
-                <Image
-                  src="/profile.jpg"
-                  alt="Thota Govindu Vinay"
-                  width={384}
-                  height={384}
+                {/* Profile image inside the circle, using public/profileimage.png */}
+                <img
+                  src="/profileimage.png"
+                  alt="Profile"
                   className="rounded-full object-cover w-full h-full relative z-10"
-                  priority
+                  style={{ width: "100%", height: "100%" }}
                 />
-                */}
               </div>
             </div>
           </motion.div>

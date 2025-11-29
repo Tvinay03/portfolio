@@ -11,7 +11,7 @@ const projects = [
     title: "Automated Testing Platform",
     description:
       "AI-powered test case generation with JWT authentication, chat interface for test creation, and full-stack TypeScript implementation.",
-    image: "/projects/testing-platform.jpg", // ⚠️ ADD PROJECT IMAGES TO public/projects/
+    image: "/p1.png",
     tech: [
       "Next.js 14",
       "React 18",
@@ -22,42 +22,24 @@ const projects = [
       "MongoDB",
       "JWT",
     ],
-    liveLink: "https://yourproject.vercel.app", // ⚠️ UPDATE THIS
-    githubLink: "https://github.com/yourusername/project", // ⚠️ UPDATE THIS
+    githubLink: "https://github.com/Tvinay03/automatetesting.git",
   },
   {
     id: 2,
     title: "Multimedia Upload & Search App",
     description:
       "AI-powered multimedia upload, processing, and search functionality with advanced cloud integration.",
-    image: "/projects/multimedia-app.jpg", // ⚠️ ADD PROJECT IMAGES
-    tech: [
-      "React.js",
-      "Next.js 14",
-      "Firebase",
-      "Node.js",
-      "GCP",
-      "AI/ML",
-    ],
-    liveLink: "https://yourproject.vercel.app", // ⚠️ UPDATE THIS
-    githubLink: "https://github.com/yourusername/project", // ⚠️ UPDATE THIS
+    image: "/p2.png",
+    tech: ["React.js", "Next.js 14", "Firebase", "Node.js", "GCP", "AI/ML"],
+    githubLink: "https://github.com/Tvinay03/multimedia-upload-search-app",
   },
   {
     id: 3,
     title: "E-Commerce Platform",
     description:
       "Full-featured e-commerce platform with payment integration, admin dashboard, and real-time inventory management.",
-    image: "/projects/ecommerce.jpg", // ⚠️ ADD PROJECT IMAGES
-    tech: [
-      "Next.js",
-      "TypeScript",
-      "Stripe",
-      "PostgreSQL",
-      "Prisma",
-      "Tailwind",
-    ],
-    liveLink: "https://yourproject.vercel.app", // ⚠️ UPDATE THIS
-    githubLink: "https://github.com/yourusername/project", // ⚠️ UPDATE THIS
+    image: "/p3.png",
+    tech: ["Next.js", "TypeScript", "Stripe", "PostgreSQL", "Tailwind"],
   },
   // ADD MORE PROJECTS HERE
 ];
@@ -116,10 +98,12 @@ const Projects = () => {
               <div className="relative h-48 bg-dark-lighter overflow-hidden flex items-center justify-center">
                 {/* Placeholder - Add project images to public/projects/ */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-dark flex items-center justify-center">
-                  <div className="text-center">
-                    <p className="text-4xl mb-2">📱</p>
-                    <p className="text-xs text-gray-500">Add screenshot</p>
-                  </div>
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="relative object-cover w-full h-full z-10"
+                    style={{ width: "100%", height: "100%" }}
+                  />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent opacity-60" />
               </div>
@@ -146,26 +130,19 @@ const Projects = () => {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex gap-4 pt-2">
-                  <a
-                    href={project.liveLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-primary-dark text-white text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105"
-                  >
-                    <ExternalLink size={16} />
-                    Live Demo
-                  </a>
-                  <a
-                    href={project.githubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 glass hover:bg-white/10 text-white text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105"
-                  >
-                    <Github size={16} />
-                    GitHub
-                  </a>
-                </div>
+                {project.githubLink && (
+                  <div className="flex gap-4 pt-2">
+                    <a
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 glass hover:bg-white/10 text-white text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105"
+                    >
+                      <Github size={16} />
+                      GitHub
+                    </a>
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}
