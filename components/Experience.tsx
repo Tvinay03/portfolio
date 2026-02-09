@@ -24,7 +24,7 @@ const experiences = [
     id: 2,
     role: "Software Engineer Intern — Full Stack Developer",
     company: "Genesys Telecom Labs",
-    location: "Chennai, Tamil Nadu, India",
+    location: "Chennai,India",
     period: "Aug 2022 – May 2023",
     responsibilities: [
       "Enhanced call and screen recording applications using JavaScript, Knockout.js, Ember.js, and Spring Boot",
