@@ -9,7 +9,7 @@ const experiences = [
     id: 1,
     role: "Software Engineer — Full Stack Developer",
     company: "Unify Liv",
-    location: "Bengaluru",
+    location: "Ahmedabad, Gujarat, India · Remote",
     period: "May 2023 – Present",
     responsibilities: [
       "Developed scalable web and mobile applications using React.js, Next.js, React Native, GCP and Node.js",
@@ -24,7 +24,7 @@ const experiences = [
     id: 2,
     role: "Software Engineer Intern — Full Stack Developer",
     company: "Genesys Telecom Labs",
-    location: "Chennai",
+    location: "Chennai, Tamil Nadu, India",
     period: "Aug 2022 – May 2023",
     responsibilities: [
       "Enhanced call and screen recording applications using JavaScript, Knockout.js, Ember.js, and Spring Boot",
