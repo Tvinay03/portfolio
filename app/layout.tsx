@@ -1,13 +1,22 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
-  title: "Thota Govindu Vinay - Full Stack Developer",
-  description: "Full Stack Developer proficient in React.js, Next.js, Node.js, and AI-driven development. Building scalable web and mobile applications.",
-  keywords: ["Full Stack Developer", "React", "Next.js", "Node.js", "TypeScript", "AI", "GCP"],
+  title: "Thota Govindu Vinay | Full Stack Developer",
+  description:
+    "Premium portfolio of Thota Govindu Vinay, a Full Stack Developer building scalable web, mobile, and AI-enabled products with React, Next.js, Java, Spring Boot, Node.js, React Native, and Google Cloud.",
+  keywords: [
+    "Thota Govindu Vinay",
+    "Full Stack Developer",
+    "React.js",
+    "Next.js",
+    "Java",
+    "Spring Boot",
+    "React Native",
+    "Node.js",
+    "Google Cloud Platform",
+    "OpenAI GPT",
+  ],
 };
 
 export default function RootLayout({
@@ -17,7 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

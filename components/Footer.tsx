@@ -1,21 +1,20 @@
 import { Github, Linkedin, Mail, Heart } from "lucide-react";
 
-// 🎯 CUSTOMIZE YOUR SOCIAL LINKS HERE
 const socialLinks = [
   {
     name: "LinkedIn",
     icon: Linkedin,
-    href: "https://linkedin.com/in/yourprofile", // ⚠️ UPDATE THIS
+    href: "https://www.linkedin.com/in/vinay-thota/",
   },
   {
     name: "GitHub",
     icon: Github,
-    href: "https://github.com/yourprofile", // ⚠️ UPDATE THIS
+    href: "https://github.com/Tvinay03",
   },
   {
     name: "Email",
     icon: Mail,
-    href: "mailto:chinnavinay663@gmail.com",
+    href: "mailto:chinnuvinay663@gmail.com",
   },
 ];
 
@@ -23,18 +22,18 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-dark-lighter border-t border-dark-border py-8 px-4">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          {/* Brand */}
+    <footer className="border-t border-white/10 py-8">
+      <div className="section-shell">
+        <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
           <div className="text-center md:text-left">
-            <h3 className="text-xl font-bold text-gradient mb-2">Vinay.dev</h3>
-            <p className="text-gray-400 text-sm">
-              Building the future, one line at a time.
+            <h3 className="display-font text-xl font-semibold text-white">
+              VINAY<span className="text-primary">.DEV</span>
+            </h3>
+            <p className="mt-2 text-sm text-slate-400">
+              Full stack developer building premium digital products with modern engineering.
             </p>
           </div>
 
-          {/* Social Links */}
           <div className="flex gap-4">
             {socialLinks.map((social) => (
               <a
@@ -42,7 +41,7 @@ const Footer = () => {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 glass hover:bg-primary/20 rounded-lg transition-all duration-300 hover:scale-110"
+                className="rounded-full border border-white/10 bg-white/5 p-3 transition-all duration-300 hover:-translate-y-1 hover:bg-white/10"
                 aria-label={social.name}
               >
                 <social.icon size={20} />
@@ -50,10 +49,9 @@ const Footer = () => {
             ))}
           </div>
 
-          {/* Copyright */}
-          <div className="text-center md:text-right text-sm text-gray-400">
-            <p className="flex items-center gap-1 justify-center md:justify-end">
-              Made with <Heart size={16} className="text-primary fill-primary" /> by
+          <div className="text-center text-sm text-slate-400 md:text-right">
+            <p className="flex items-center justify-center gap-1 md:justify-end">
+              Made with <Heart size={16} className="fill-primary text-primary" /> by
               Vinay
             </p>
             <p className="mt-1">© {currentYear} All rights reserved.</p>

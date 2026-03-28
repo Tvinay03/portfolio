@@ -1,47 +1,67 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { ArrowUpRight, Github, Layers3 } from "lucide-react";
 import Image from "next/image";
 
-// 🎯 CUSTOMIZE YOUR PROJECTS HERE
 const projects = [
   {
     id: 1,
-    title: "Automated Testing Platform",
+    title: "Enterprise Community Management Platform",
+    category: "Property Tech",
     description:
-      "AI-powered test case generation with JWT authentication, chat interface for test creation, and full-stack TypeScript implementation.",
+      "Scalable web and mobile modules for a property management ecosystem, built to support community workflows, secure access, and operational scale.",
     image: "/p1.png",
+    outcome:
+      "Delivered cross-platform product experiences with strong frontend architecture, secure backend services, and cloud-ready deployment patterns.",
     tech: [
-      "Next.js 14",
-      "React 18",
-      "TypeScript",
-      "Tailwind CSS",
+      "React.js",
+      "Next.js",
+      "React Native",
       "Node.js",
-      "Express.js",
-      "MongoDB",
+      "GCP",
       "JWT",
+      "REST APIs",
     ],
     githubLink: "https://github.com/Tvinay03/automatetesting.git",
   },
   {
     id: 2,
-    title: "Multimedia Upload & Search App",
+    title: "Customer Experience Communication Platform",
+    category: "Communications",
     description:
-      "AI-powered multimedia upload, processing, and search functionality with advanced cloud integration.",
+      "Real-time communication workflows powered by Genesys Cloud APIs, event-driven integrations, and frontend experiences focused on speed and reliability.",
     image: "/p2.png",
-    tech: ["React.js", "Next.js 14", "Firebase", "Node.js", "GCP", "AI/ML"],
+    outcome:
+      "Enabled richer communication flows, cleaner event processing, and resilient integrations across customer-facing systems.",
+    tech: [
+      "React.js",
+      "Node.js",
+      "Genesys Cloud",
+      "Event Processing",
+      "JavaScript",
+      "Spring Boot",
+    ],
     githubLink: "https://github.com/Tvinay03/multimedia-upload-search-app",
   },
   {
     id: 3,
-    title: "E-Commerce Platform",
+    title: "AI Workflow Automation Systems",
+    category: "AI and Automation",
     description:
-      "Full-featured e-commerce platform with payment integration, admin dashboard, and real-time inventory management.",
+      "Automation-first product features using OpenAI GPT, Google Cloud AI, Document AI, and scheduler-based workflows to reduce manual effort.",
     image: "/p3.png",
-    tech: ["Next.js", "TypeScript", "Stripe", "PostgreSQL", "Tailwind"],
+    outcome:
+      "Reduced manual processes by 30 percent and helped improve platform engagement by 25 percent through intelligent automation.",
+    tech: [
+      "OpenAI GPT",
+      "Google Cloud AI",
+      "Document AI",
+      "Node.js",
+      "Triggers",
+      "Task Schedulers",
+    ],
   },
-  // ADD MORE PROJECTS HERE
 ];
 
 const Projects = () => {
@@ -61,88 +81,96 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
+    <section id="projects" className="relative py-24">
+      <div className="section-shell">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="mx-auto mb-16 max-w-3xl text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Featured <span className="text-gradient">Projects</span>
+          <span className="eyebrow mb-4">
+            <Layers3 size={14} />
+            Selected Work
+          </span>
+          <h2 className="section-title">
+            Professional projects built for scale, adoption, and real product use.
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Showcasing my best work in full-stack development, AI integration,
-            and cloud solutions.
+          <p className="section-copy mt-5">
+            These case-study style highlights reflect the kind of systems I build:
+            polished interfaces, strong backend foundations, cloud-native
+            delivery, and AI-enhanced workflows.
           </p>
         </motion.div>
 
-        {/* Projects Grid */}
         <motion.div
           variants={container}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid gap-8 lg:grid-cols-3"
         >
           {projects.map((project) => (
             <motion.div
               key={project.id}
               variants={item}
-              className="group glass rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20"
+              className="group panel flex h-full flex-col overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-primary/30"
             >
-              {/* Project Image */}
-              <div className="relative h-48 bg-dark-lighter overflow-hidden flex items-center justify-center">
-                {/* Placeholder - Add project images to public/projects/ */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-dark flex items-center justify-center">
-                  <img
+              <div className="relative h-64 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10" />
+                <Image
                     src={project.image}
                     alt={project.title}
-                    className="relative object-cover w-full h-full z-10"
-                    style={{ width: "100%", height: "100%" }}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent" />
+                <div className="absolute left-5 top-5 rounded-full border border-white/10 bg-dark/70 px-3 py-2 text-xs uppercase tracking-[0.24em] text-primary-light backdrop-blur-xl">
+                  {project.category}
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent opacity-60" />
               </div>
 
-              {/* Project Content */}
-              <div className="p-6 space-y-4">
-                <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="display-font text-2xl font-semibold text-white transition-colors group-hover:text-primary-light">
                   {project.title}
                 </h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
+                <p className="mt-4 text-sm leading-7 text-slate-300/90">
                   {project.description}
                 </p>
+                <div className="my-5 soft-line" />
+                <p className="text-sm leading-7 text-slate-400">
+                  {project.outcome}
+                </p>
 
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2">
+                <div className="mt-6 flex flex-wrap gap-2">
                   {project.tech.map((tech, index) => (
                     <span
                       key={index}
-                      className="px-3 py-1 text-xs bg-primary/10 text-primary rounded-full border border-primary/20"
+                      className="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs text-slate-200"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                {/* Action Buttons */}
-                {project.githubLink && (
-                  <div className="flex gap-4 pt-2">
+                <div className="mt-8 flex flex-wrap gap-3">
+                  {project.githubLink && (
                     <a
                       href={project.githubLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 glass hover:bg-white/10 text-white text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105"
+                      className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/10"
                     >
                       <Github size={16} />
                       GitHub
                     </a>
-                  </div>
-                )}
+                  )}
+                  <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-3 text-sm font-medium text-primary-light">
+                    Product Thinking
+                    <ArrowUpRight size={16} />
+                  </span>
+                </div>
               </div>
             </motion.div>
           ))}

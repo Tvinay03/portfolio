@@ -2,41 +2,158 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  color-scheme: dark;
+}
+
 @layer base {
+  * {
+    @apply border-dark-border;
+  }
+
   body {
     @apply bg-dark text-white antialiased;
+    font-family: "Manrope", "Avenir Next", "Segoe UI", sans-serif;
+    background-image:
+      radial-gradient(circle at 15% 20%, rgba(123, 212, 215, 0.16), transparent 28%),
+      radial-gradient(circle at 80% 10%, rgba(211, 177, 122, 0.2), transparent 30%),
+      radial-gradient(circle at 50% 60%, rgba(24, 43, 72, 0.95), transparent 45%),
+      linear-gradient(180deg, #06101c 0%, #09111d 35%, #081420 100%);
+    min-height: 100vh;
+  }
+
+  body::before,
+  body::after {
+    content: "";
+    position: fixed;
+    inset: auto;
+    z-index: -1;
+    border-radius: 9999px;
+    filter: blur(90px);
+    pointer-events: none;
+  }
+
+  body::before {
+    width: 18rem;
+    height: 18rem;
+    top: 12%;
+    left: -4rem;
+    background: rgba(123, 212, 215, 0.1);
+  }
+
+  body::after {
+    width: 24rem;
+    height: 24rem;
+    right: -6rem;
+    bottom: 10%;
+    background: rgba(211, 177, 122, 0.1);
+  }
+
+  ::selection {
+    background: rgba(211, 177, 122, 0.25);
+    color: #f8fafc;
   }
 }
 
 @layer utilities {
   .glass {
-    @apply bg-white/5 backdrop-blur-md border border-white/10;
+    @apply border border-white/10 bg-white/5 backdrop-blur-xl;
   }
-  
+
   .text-gradient {
-    @apply bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-white via-primary-light to-secondary-light bg-clip-text text-transparent;
+  }
+
+  .display-font {
+    font-family: "Sora", "Avenir Next", "Trebuchet MS", sans-serif;
+  }
+
+  .section-shell {
+    @apply relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.28em] text-primary-light backdrop-blur-xl;
+  }
+
+  .section-title {
+    @apply display-font text-4xl font-semibold tracking-tight text-white md:text-5xl;
+  }
+
+  .section-copy {
+    @apply text-base leading-7 text-slate-300/90 md:text-lg;
+  }
+
+  .panel {
+    @apply relative overflow-hidden rounded-[30px] border border-white/10 bg-dark-lighter/75 shadow-[0_24px_80px_rgba(3,7,18,0.45)] backdrop-blur-xl;
+  }
+
+  .panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.12), transparent 24%),
+      linear-gradient(315deg, rgba(123, 212, 215, 0.08), transparent 36%);
+    pointer-events: none;
+  }
+
+  .premium-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: radial-gradient(circle at center, black 42%, transparent 85%);
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-200 backdrop-blur-xl;
+  }
+
+  .metric-card {
+    @apply panel p-5;
+  }
+
+  .soft-line {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-white/[0.15] to-transparent;
+  }
+
+  .accent-ring {
+    box-shadow:
+      0 0 0 1px rgba(211, 177, 122, 0.18),
+      0 24px 80px rgba(3, 7, 18, 0.45);
+  }
+
+  .shimmer-border {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(211, 177, 122, 0.22) 25%,
+      rgba(123, 212, 215, 0.2) 50%,
+      rgba(255, 255, 255, 0.05) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s linear infinite;
   }
 }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1a1a;
+  background: #0a1220;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #4f46e5;
+  background: linear-gradient(180deg, #d3b17a, #5eb7bd);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #6366f1;
+  background: linear-gradient(180deg, #f3e0be, #7bd4d7);
 }

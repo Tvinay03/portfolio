@@ -1,9 +1,19 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Download, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import {
+  ArrowRight,
+  BrainCircuit,
+  Download,
+  Github,
+  Layers3,
+  Linkedin,
+  Mail,
+  MapPin,
+  Sparkles,
+} from "lucide-react";
 
-// 🎯 CUSTOMIZE YOUR SOCIAL LINKS HERE
 const socialLinks = [
   {
     name: "LinkedIn",
@@ -18,149 +28,265 @@ const socialLinks = [
   {
     name: "Email",
     icon: Mail,
-    href: "mailto:chinnavinay663@gmail.com",
+    href: "mailto:chinnuvinay663@gmail.com",
+  },
+];
+
+const proofStats = [
+  { value: "3", suffix: "+", label: "Years building production software" },
+  { value: "30", suffix: "%", label: "Workflow reduction through automation" },
+  { value: "25", suffix: "%", label: "Engagement uplift from AI features" },
+];
+
+const specialtyCards = [
+  {
+    title: "Product Engineering",
+    icon: Layers3,
+    copy: "React.js, Next.js, React Native, TypeScript, Tailwind CSS",
+  },
+  {
+    title: "Backend and AI Systems",
+    icon: BrainCircuit,
+    copy: "Java, Spring Boot, Node.js, OpenAI GPT, Google Cloud AI",
   },
 ];
 
 const Hero = () => {
-  const scrollToProjects = () => {
-    document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
+  const scrollToSection = (selector: string) => {
+    document.querySelector(selector)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center pt-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+      className="relative flex min-h-screen items-center overflow-hidden pt-24"
     >
-      {/* Animated background gradients */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 -left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 -right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse delay-1000" />
-      </div>
+      <div className="premium-grid pointer-events-none absolute inset-0 opacity-40" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-primary/10 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-dark to-transparent" />
 
-      <div className="max-w-7xl mx-auto w-full relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
+      <div className="pointer-events-none absolute left-[-5rem] top-1/3 h-64 w-64 rounded-full bg-secondary/10 blur-3xl" />
+      <div className="pointer-events-none absolute right-[-4rem] top-24 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
+
+      <div className="section-shell relative z-10">
+        <div className="grid items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="space-y-6"
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="space-y-8"
           >
-            {/* Greeting */}
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="text-primary text-lg font-medium"
-            >
-              Hello! I Am
-            </motion.p>
+            <div className="space-y-5">
+              <span className="eyebrow">
+                <Sparkles size={14} />
+                Full Stack Developer | Hyderabad, India
+              </span>
 
-            {/* Name */}
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold"
-            >
-              Thota Govindu <span className="text-gradient">Vinay</span>
-            </motion.h1>
+              <h1 className="section-title max-w-4xl text-5xl md:text-6xl xl:text-7xl">
+                Designing and shipping
+                <span className="text-gradient"> premium digital products</span>
+                {" "}for web, mobile, and AI-powered platforms.
+              </h1>
 
-            {/* Job Title */}
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="text-2xl md:text-3xl text-gray-400"
-            >
-              Full Stack Developer – React, Next.js, Node.js
-            </motion.h2>
+              <p className="section-copy max-w-2xl text-lg text-slate-300">
+                I am Thota Govindu Vinay, a full stack developer with 3 years of
+                experience building scalable applications with React.js, Next.js,
+                React Native, Java, Spring Boot, Node.js, and Google Cloud
+                Platform. I specialize in secure backend architecture, AI
+                integrations, and workflow automation that turns ambitious ideas
+                into production-ready systems.
+              </p>
+            </div>
 
-            {/* Tagline */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              className="text-gray-300 text-lg max-w-xl leading-relaxed"
-            >
-              Modern Full‑Stack Developer · React, React Native, Next.js, Node.js · Building
-              scalable, high‑performance web & mobile solutions with a passion
-              for AI and Google Cloud.
-            </motion.p>
+            <div className="flex flex-wrap gap-3">
+              <span className="chip">React.js</span>
+              <span className="chip">Next.js 14</span>
+              <span className="chip">React Native</span>
+              <span className="chip">Java</span>
+              <span className="chip">Spring Boot</span>
+              <span className="chip">Node.js</span>
+              <span className="chip">Google Cloud Platform</span>
+            </div>
 
-            {/* CTAs */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-              className="flex flex-wrap gap-4 pt-4"
-            >
+            <div className="flex flex-wrap gap-4 pt-2">
               <button
-                onClick={scrollToProjects}
-                className="px-8 py-3 bg-primary hover:bg-primary-dark text-white font-medium rounded-lg transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-primary/50 hover:scale-105"
+                onClick={() => scrollToSection("#projects")}
+                className="group inline-flex items-center gap-2 rounded-full bg-white px-7 py-4 font-semibold text-dark transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(255,255,255,0.18)]"
               >
-                View Projects
-                <ArrowRight size={20} />
+                Explore Projects
+                <ArrowRight
+                  size={18}
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                />
+              </button>
+              <button
+                onClick={() => scrollToSection("#contact")}
+                className="inline-flex items-center gap-2 rounded-full border border-white/[0.12] bg-white/5 px-7 py-4 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-white/10"
+              >
+                Start a Conversation
               </button>
               <a
                 href="https://drive.google.com/uc?export=download&id=1zNRomew1zUgV7arHAf0926gn7mIftYUZ"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-3 glass hover:bg-white/10 text-white font-medium rounded-lg transition-all duration-300 flex items-center gap-2 hover:scale-105"
+                className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/[0.12] px-7 py-4 font-semibold text-primary-light transition-all duration-300 hover:-translate-y-1 hover:bg-primary/[0.18]"
               >
-                <Download size={20} />
-                Download Resume
+                <Download size={18} />
+                Resume
               </a>
-            </motion.div>
+            </div>
 
-            {/* Social Links */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.7 }}
-              className="flex gap-4 pt-4"
-            >
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 glass hover:bg-primary/20 rounded-lg transition-all duration-300 hover:scale-110"
-                  aria-label={social.name}
+            <div className="grid gap-4 pt-4 sm:grid-cols-3">
+              {proofStats.map((stat, index) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.25 + index * 0.12, duration: 0.6 }}
+                  className="panel p-5"
                 >
-                  <social.icon size={24} />
-                </a>
+                  <div className="display-font text-4xl font-semibold text-white">
+                    {stat.value}
+                    <span className="text-primary">{stat.suffix}</span>
+                  </div>
+                  <p className="mt-2 text-sm leading-6 text-slate-300/[0.85]">
+                    {stat.label}
+                  </p>
+                </motion.div>
               ))}
-            </motion.div>
+            </div>
+
+            <div className="flex flex-wrap gap-4 pt-1 text-sm text-slate-300">
+              <a
+                href="mailto:chinnuvinay663@gmail.com"
+                className="chip transition-colors hover:text-white"
+              >
+                <Mail size={16} className="text-primary" />
+                chinnuvinay663@gmail.com
+              </a>
+              <span className="chip">
+                <MapPin size={16} className="text-secondary" />
+                Hyderabad, India
+              </span>
+            </div>
           </motion.div>
 
-          {/* Right - Profile Image */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex justify-center items-center"
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.85, delay: 0.15 }}
+            className="relative"
           >
-            <div className="relative">
-              {/* Glow effect */}
-              <div className="absolute inset-0 bg-primary/30 rounded-full blur-3xl animate-glow" />
+            <div className="relative mx-auto max-w-[34rem]">
+              <div className="absolute inset-8 rounded-full border border-primary/20" />
+              <div className="absolute inset-0 animate-orbit rounded-full border border-dashed border-white/10" />
+              <div className="absolute -left-6 top-16 hidden h-28 w-28 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl lg:block" />
 
-              {/* Image container */}
-              <div className="relative w-80 h-80 md:w-96 md:h-96">
-                <div className="absolute inset-0 rounded-full border-4 border-primary/50 animate-pulse" />
-                <div className="absolute inset-2 rounded-full border-2 border-primary/30" />
+              <motion.div
+                animate={{ y: [0, -12, 0] }}
+                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+                className="panel accent-ring relative overflow-hidden p-6"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.12] via-transparent to-secondary/10" />
+                <div className="absolute right-6 top-6 h-24 w-24 rounded-full bg-primary/[0.15] blur-2xl" />
+                <div className="relative z-10 grid gap-5">
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <p className="text-sm uppercase tracking-[0.24em] text-primary-light">
+                        Featured Profile
+                      </p>
+                      <h2 className="display-font mt-3 text-3xl font-semibold">
+                        Full Stack Developer
+                      </h2>
+                    </div>
+                    <div className="rounded-full border border-white/10 bg-white/5 p-3">
+                      <Sparkles size={18} className="text-primary" />
+                    </div>
+                  </div>
 
-                {/* 🖼️ REPLACE WITH YOUR IMAGE PATH */}
-                {/* Profile image inside the circle, using public/profileimage.png */}
-                <img
-                  src="/profileimage.png"
-                  alt="Profile"
-                  className="rounded-full object-cover w-full h-full relative z-10"
-                  style={{ width: "100%", height: "100%" }}
-                />
-              </div>
+                  <div className="grid gap-4 lg:grid-cols-[0.95fr_1.05fr]">
+                    <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-dark">
+                      <div className="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent" />
+                      <Image
+                        src="/profileimage.png"
+                        alt="Thota Govindu Vinay portrait"
+                        width={900}
+                        height={1100}
+                        className="h-full w-full object-cover"
+                        priority
+                      />
+                    </div>
+
+                    <div className="grid gap-4">
+                      {specialtyCards.map((card) => (
+                        <div
+                          key={card.title}
+                          className="rounded-[24px] border border-white/10 bg-dark-elevated/70 p-5"
+                        >
+                          <div className="mb-4 inline-flex rounded-2xl border border-white/10 bg-white/5 p-3">
+                            <card.icon size={20} className="text-primary" />
+                          </div>
+                          <h3 className="display-font text-xl font-semibold text-white">
+                            {card.title}
+                          </h3>
+                          <p className="mt-2 text-sm leading-6 text-slate-300/90">
+                            {card.copy}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="soft-line" />
+
+                  <div className="flex flex-wrap items-center justify-between gap-4">
+                    <div className="flex flex-wrap gap-3">
+                      {socialLinks.map((social) => (
+                        <a
+                          key={social.name}
+                          href={social.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-200 transition-all duration-300 hover:-translate-y-1 hover:bg-white/10 hover:text-white"
+                          aria-label={social.name}
+                        >
+                          <social.icon size={16} className="text-primary" />
+                          {social.name}
+                        </a>
+                      ))}
+                    </div>
+                    <p className="text-sm leading-6 text-slate-300/[0.85]">
+                      Secure APIs, microservices, Spring Boot services, AI
+                      workflows, and polished user interfaces built end to end.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div
+                animate={{ y: [0, 10, 0] }}
+                transition={{ duration: 8.5, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -left-6 bottom-10 hidden max-w-[13rem] rounded-[24px] border border-white/10 bg-dark-lighter/90 p-5 shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl lg:block"
+              >
+                <p className="text-xs uppercase tracking-[0.26em] text-secondary-light">
+                  Focus Areas
+                </p>
+                <p className="mt-3 text-sm leading-6 text-slate-200">
+                  AI-enhanced products, property tech platforms, communication
+                  systems, and scalable developer workflows.
+                </p>
+              </motion.div>
+
+              <motion.div
+                animate={{ y: [0, -9, 0] }}
+                transition={{ duration: 7.5, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -right-4 top-14 hidden rounded-[24px] border border-primary/20 bg-primary/10 p-4 text-sm text-primary-light shadow-[0_18px_50px_rgba(211,177,122,0.14)] backdrop-blur-xl lg:block"
+              >
+                Production-ready delivery
+                <div className="mt-2 display-font text-2xl font-semibold text-white">
+                  Web + Mobile + AI
+                </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
