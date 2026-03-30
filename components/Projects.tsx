@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Github, Layers3 } from "lucide-react";
+import { ArrowUpRight, Layers3 } from "lucide-react";
 import Image from "next/image";
 
 const projects = [
@@ -23,7 +23,6 @@ const projects = [
       "JWT",
       "REST APIs",
     ],
-    githubLink: "https://github.com/Tvinay03/automatetesting.git",
   },
   {
     id: 2,
@@ -42,7 +41,6 @@ const projects = [
       "JavaScript",
       "Spring Boot",
     ],
-    githubLink: "https://github.com/Tvinay03/multimedia-upload-search-app",
   },
   {
     id: 3,
@@ -155,17 +153,6 @@ const Projects = () => {
                 </div>
 
                 <div className="mt-8 flex flex-wrap gap-3">
-                  {project.githubLink && (
-                    <a
-                      href={project.githubLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/10"
-                    >
-                      <Github size={16} />
-                      GitHub
-                    </a>
-                  )}
                   <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-3 text-sm font-medium text-primary-light">
                     Product Thinking
                     <ArrowUpRight size={16} />
