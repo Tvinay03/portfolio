@@ -82,13 +82,13 @@ const Hero = () => {
                 Full Stack Developer | Hyderabad, India
               </span>
 
-              <h1 className="section-title max-w-4xl text-5xl md:text-6xl xl:text-7xl">
+              <h1 className="section-title max-w-4xl text-4xl sm:text-5xl md:text-6xl xl:text-7xl">
                 Designing and shipping
                 <span className="text-gradient"> premium digital products</span>
                 {" "}for web, mobile, and AI-powered platforms.
               </h1>
 
-              <p className="section-copy max-w-2xl text-lg text-slate-300">
+              <p className="section-copy max-w-2xl text-slate-300 sm:text-lg">
                 I am Thota Govindu Vinay, a full stack developer with 3 years of
                 experience building scalable applications with React.js, Next.js,
                 React Native, Java, Spring Boot, Node.js, and Google Cloud
@@ -195,7 +195,7 @@ const Hero = () => {
                       <p className="text-sm uppercase tracking-[0.24em] text-primary-light">
                         Featured Profile
                       </p>
-                      <h2 className="display-font mt-3 text-3xl font-semibold">
+                      <h2 className="display-font mt-3 text-2xl font-semibold sm:text-3xl">
                         Full Stack Developer
                       </h2>
                     </div>

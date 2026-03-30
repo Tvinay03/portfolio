@@ -112,7 +112,7 @@ const Highlights = () => {
             <p className="text-xs uppercase tracking-[0.26em] text-primary-light">
               Delivery Model
             </p>
-            <h3 className="display-font mt-4 text-3xl font-semibold text-white">
+            <h3 className="display-font mt-4 text-2xl font-semibold text-white sm:text-3xl">
               End-to-end execution aligned with modern product teams.
             </h3>
             <div className="mt-8 space-y-4">

@@ -109,7 +109,7 @@ const About = () => {
               <div className="mb-6 inline-flex rounded-2xl border border-white/10 bg-white/5 p-3">
                 <ShieldCheck size={22} className="text-primary" />
               </div>
-              <h3 className="display-font text-3xl font-semibold text-white">
+              <h3 className="display-font text-2xl font-semibold text-white sm:text-3xl">
                 Professional Summary
               </h3>
               <div className="mt-5 space-y-4 leading-7 text-slate-300/[0.92]">
@@ -215,7 +215,7 @@ const About = () => {
               <p className="text-xs uppercase tracking-[0.26em] text-primary-light">
                 Career Positioning
               </p>
-              <h4 className="display-font mt-4 text-2xl font-semibold text-white">
+              <h4 className="display-font mt-4 text-xl font-semibold text-white sm:text-2xl">
                 Strong fit for product teams that need a developer who can own the full flow.
               </h4>
               <p className="mt-4 text-sm leading-7 text-slate-300/90">

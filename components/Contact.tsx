@@ -82,7 +82,7 @@ const Contact = () => {
               <p className="text-xs uppercase tracking-[0.26em] text-primary-light">
                 Let&apos;s Build Something Strong
               </p>
-              <h3 className="display-font mt-4 text-3xl font-semibold text-white">
+              <h3 className="display-font mt-4 text-2xl font-semibold text-white sm:text-3xl">
                 Available for full stack roles, contract work, and product-focused collaborations.
               </h3>
               <p className="mt-4 max-w-2xl text-base leading-7 text-slate-300/90">
