@@ -126,7 +126,7 @@ const Hero = () => {
                 Start a Conversation
               </button>
               <a
-                href="https://drive.google.com/uc?export=download&id=1zNRomew1zUgV7arHAf0926gn7mIftYUZ"
+                href="/Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/[0.12] px-7 py-4 font-semibold text-primary-light transition-all duration-300 hover:-translate-y-1 hover:bg-primary/[0.18]"

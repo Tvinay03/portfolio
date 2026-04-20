@@ -101,7 +101,7 @@ const Contact = () => {
                   <ArrowUpRight size={18} />
                 </a>
                 <a
-                  href="https://drive.google.com/uc?export=download&id=1zNRomew1zUgV7arHAf0926gn7mIftYUZ"
+                  href="/Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-4 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-white/10"
